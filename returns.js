@@ -2,6 +2,6 @@ function id (x) {
   return x;
 }
 
-function getlength (arr) {
-  return arr.length;
+function getLength (x) {
+  return x.length;
 }
