@@ -4,7 +4,7 @@ is.str = (value) => typeof value === 'string';
 is.bool = (value) => typeof value === 'boolean';
 is.undef = (value) => typeof value === 'undefined';
 is.def = (value) => typeof value !== 'undefined';
-is.array = (value) => Array.isArray(value);
+is.arr = (value) => Array.isArray(value);
 is.obj = (value) => typeof value === 'object' && value !== null;
 is.fun = (value) => typeof value === 'function';
 is.truthy = (value) => !!value;
