@@ -1,5 +1,9 @@
 function isPositive(number) {
-  return number >= 0;
+    if (number = 0) {
+        return false;
+    }
+  return number >= 1;
+
 }
 
 function abs (x) {
