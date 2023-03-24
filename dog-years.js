@@ -10,7 +10,7 @@ function dogYears(planet, seconds) {
       neptune: 164.79132,
     };
 
-    const earthYears = ageInSeconds / 31557600;
+    const earthYears = seconds / 31557600;
     const dogYearsOnEarth = earthYears * 7;
     const dogYearsOnPlanet = dogYearsOnEarth / orbitalPeriods[planet];
 
