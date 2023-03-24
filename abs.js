@@ -5,5 +5,5 @@ function isPositive(number) {
 }
 
 function abs (x) {
-  return isPositive(x) ? x : -x;
+  return x < 0? -x : x;
 }
