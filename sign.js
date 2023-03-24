@@ -12,7 +12,7 @@ function sameSign(x,y) {
     if (x === 0 || y === 0){
      return false;
     }
-    if (x > 0 && y > 0){
+    if (x === 0 && y === 0){
         return true;
     }
     return (x >= 0 && y >= 0) || (x < 0 && y < 0);
