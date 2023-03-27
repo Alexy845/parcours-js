@@ -33,7 +33,23 @@ function divide (a, b) {
 }
 
 function modulo (a, b) {
-  return a % b;
+    if (a === 0) {
+        return 0;
+    }
+    if (a < 0 && b < 0) {
+        a = -a;
+        b = -b;
+    }
+    if (a < 0) {
+        return -modulo(-a, b);
+    }
+    if (b < 0) {
+        return -modulo(a, -b);
+    }
+    if (a < b) {
+        return a;
+    }
+    return modulo(a - b, b);
 }
 
 
