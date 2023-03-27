@@ -39,6 +39,7 @@ function modulo (a, b) {
     if (a < 0 && b < 0) {
         a = -a;
         b = -b;
+        return modulo(a, b);
     }
     if (a < 0) {
         return -modulo(-a, b);
