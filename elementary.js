@@ -37,6 +37,3 @@ function modulo (a, b) {
 }
 
 
-console.log(multiply(3, 4));
-console.log(divide(12, 3));
-console.log(modulo(12, 3));
