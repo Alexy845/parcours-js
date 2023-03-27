@@ -45,13 +45,12 @@ function modulo (a, b) {
     }
     if (b < 0) {
         return modulo(a, -b);
-    }
+    }   
     while (a >= b) {
         a -= b;
     }
-      return a;
+    return modulo(a - b, b);
 }
-
 
 
 console.log(modulo(-123, -22))
