@@ -17,7 +17,7 @@ function divide (a, b) {
         return 1;
     }
     if (a < 0) {
-        return -1 + divide(a + b, b);
+        return -b + divide(a + b, b);
     }
     if (a < b) {
         return 0;
