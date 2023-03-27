@@ -8,12 +8,10 @@ function slice (str, start, end) {
     if (end < 0) {
         end = str.length + end;
     }
-    
+
     let sliced = '';
     for (let i = start; i < end; i++) {
         sliced += str[i];
     }
     return sliced;
 }
-
-console.log(slice('abcdef', 2))
