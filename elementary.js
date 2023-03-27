@@ -35,22 +35,24 @@ function divide (a, b) {
 function modulo (a, b) {
     if (a === 0) {
         return 0;
-    }
-    if (a < 0 && b < 0) {
+      }
+      if (a < 0 && b < 0) {
         a = -a;
         b = -b;
-    }
-    if (a < 0) {
-        return -modulo(-a, b);
-    }
-    if (b < 0) {
+      }
+      if (a < 0) {
+        while (a < 0) {
+          a += b;
+        }
+        return a;
+      }
+      if (b < 0) {
         return modulo(a, -b);
-    }   
-    while (a >= b) {
+      }
+      while (a >= b) {
         a -= b;
+      }
+      return a;
     }
-    return modulo(a - b, b);
-}
-
 
 console.log(modulo(-123, -22))
