@@ -9,7 +9,7 @@ function slice (str, start, end) {
         end = str.length + end;
     }
 
-    let sliced = "";
+    let sliced = [];
     for (let i = start; i < end; i++) {
         sliced += str[i];
     }
