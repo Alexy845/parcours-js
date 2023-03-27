@@ -5,7 +5,7 @@ function multiply(a, b) {
      if (a === 1) {
     return b;
   }
-    return b + multiply(a - 1, b);
+    return b + repeat(a - 1, b);
 
 }
 
