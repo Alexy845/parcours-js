@@ -1,10 +1,13 @@
 function multiply(a, b) {
     if (a === 0 || b === 0) {
-    return 0;
-  }
-     if (a === 1) {
-    return b;
-  }
+        return 0;
+    }
+    if (a === 1) {
+        return b;
+    }
+    if (a < 0) {
+        return -b + multiply(a + 1, b);
+    }
     return b + multiply(a - 1, b);
 
 }
