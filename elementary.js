@@ -13,13 +13,10 @@ function multiply(a, b) {
 }
 
 function divide (a, b) {
-    if (a === 0 || b === 0) {
-        return 0;
-    }
+
     if (a === b) {
         return 1;
     }
-
     if (a < 0) {
         return -b + divide(a + b, b);
     }
