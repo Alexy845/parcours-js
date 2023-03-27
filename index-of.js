@@ -1,11 +1,18 @@
 function indexOf(arr, val, startIndex = 0) {
     for (let i = startIndex; i < arr.length; i++) {
-      if (arr[i] === val) {
-        return i;
-      }
+        if (arr[i] === val) {
+            return i;
+        }
     }
     return -1;
-  }
+}
   
-  console.log(indexOf(['t', '0', '0', 't'], 't', 1));
+function lastIndexOf (arr, val, startIndex = arr.length - 1) {
+    for (let i = startIndex; i >= 0; i--) {
+        if (arr[i] === val) {
+            return i;
+        }
+    }
+    return -1;
+}
   
