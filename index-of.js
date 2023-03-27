@@ -15,4 +15,12 @@ function lastIndexOf (arr, val, startIndex = arr.length - 1) {
     }
     return -1;
 }
-  
+
+function includes (arr, val) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === val) {
+            return true;
+        }
+    }
+    return false;
+}
