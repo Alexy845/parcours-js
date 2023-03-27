@@ -2,9 +2,9 @@ function split(string, separator) {
     let split = [];
     let start = 0;
     for (let i = 0; i < string.length; i++){
-        if (string[i] === separator) {
+        if (string.slice(i, i + separator.length) === separator) {
             split.push(string.slice(start, i));
-            start = i + 1;
+            start = i + separator.length;
         }
     }
     split.push(string.slice(start));
