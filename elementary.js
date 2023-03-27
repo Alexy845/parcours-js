@@ -22,9 +22,7 @@ function divide (a, b) {
     if (a < b) {
         return 0;
     }
-    if (b < 0) {
-        return -a + divide(a, b + a);
-    }
+
     if (a > b) {
         return 1 + divide(a - b, b);
     }
@@ -35,6 +33,3 @@ function divide (a, b) {
 function modulo (a, b) {
   return a % b;
 }
-
-
-console.log(divide(123, -22))
