@@ -1,8 +1,8 @@
-function split(string, separator){
+function split(string, separator) {
     let split = [];
     let start = 0;
     for (let i = 0; i < string.length; i++){
-        if (string[i] === separator){
+        if (string[i] === separator) {
             split.push(string.slice(start, i));
             start = i + 1;
         }
