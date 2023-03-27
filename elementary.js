@@ -17,7 +17,7 @@ function divide (a, b) {
         return 1;
     }
     if (a < 0) {
-        return -b + divide(a + b, b);
+        return -1 + divide(a + b, b);
     }
     if (a < b) {
         return 0;
@@ -35,3 +35,6 @@ function divide (a, b) {
 function modulo (a, b) {
   return a % b;
 }
+
+
+console.log(divide(123, -22))
