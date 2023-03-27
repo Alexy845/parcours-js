@@ -7,7 +7,7 @@ function cutLast(string) {
 }
 
 function cutFirstLast(string) {
-    return string.slice(2, -2);
+    return string.slice( -2);
 }
 function keepFirst(string) {
     return string.slice(0, 1);
