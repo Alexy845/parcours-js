@@ -1,8 +1,10 @@
-function indexOf (str, x) {
-  for (var i = 0; i < str.length; i++) {
-    if (str[i] === x) {
-      return i;
+function indexOf(arr, val, i = 0) {
+    for (let j = i; i < arr.length; j++) {
+      if (arr[j] === val) {
+        return j;
+      }
     }
+    return -1;
   }
-  return -1;
-}
+
+console.log(indexOf([t, 0, 0, t], t, 1));
