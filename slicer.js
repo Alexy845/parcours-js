@@ -11,7 +11,11 @@ function slice (str, start, end) {
 
     let sliced = [];
     for (let i = start; i < end; i++) {
-        sliced += str[i];
+        sliced.push(str[i]);
     }
-    return sliced;
+    if (typeof str === 'string') {
+        return sliced.join('');
+    } else {
+        return sliced;
+    }
 }
