@@ -1,5 +1,5 @@
 function cutFirst(string) {
-    return string.slice(1);
+    return string.slice(2);
 }
 
 function cutLast(string) {
