@@ -16,6 +16,6 @@ function keepLast(string) {
     return string.slice(-2);
 }
 function keepFirstLast(string) {
-    return string.slice(0, 2);
+    return string.slice(0, 2) + string.slice(-2);
 }
-console.log(keepFirst('abcdef'));
+console.log(keepFirstLast('abcdef'));
