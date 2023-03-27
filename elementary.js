@@ -13,7 +13,6 @@ function multiply(a, b) {
 }
 
 function divide (a, b) {
-
     if (a === b) {
         return 1;
     }
@@ -26,6 +25,9 @@ function divide (a, b) {
     if (b < 0) {
         return -1 + divide(a + b, b);
     }
+    if (a > b) {
+        return 1 + divide(a - b, b);
+    }
 
     return 1 + divide(a - b, b);
 }
@@ -33,3 +35,8 @@ function divide (a, b) {
 function modulo (a, b) {
   return a % b;
 }
+
+
+console.log(multiply(3, 4));
+console.log(divide(12, 3));
+console.log(modulo(12, 3));
