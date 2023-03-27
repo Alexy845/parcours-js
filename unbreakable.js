@@ -1,4 +1,7 @@
 function split(string, separator) {
+    if (separator === '') {
+        return string.split('');
+    }
     let split = [];
     let start = 0;
     for (let i = 0; i < string.length; i++){
