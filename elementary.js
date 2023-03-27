@@ -52,6 +52,3 @@ function modulo (a, b) {
     }
     return result < 0 ? result + b : result;
 }
-
-
-console.log(modulo(-123, -22))
