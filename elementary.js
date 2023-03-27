@@ -25,8 +25,11 @@ function divide (a, b) {
     if (a < b) {
         return 0;
     }
-    if (b<0) {
+    if (b < 0) {
         return -1 + divide(a + b, b);
+    }
+    if (a === b) {
+        return 1;
     }
     return 1 + divide(a - b, b);
 }
