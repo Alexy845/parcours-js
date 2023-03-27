@@ -3,11 +3,11 @@ function cutFirst(string) {
 }
 
 function cutLast(string) {
-    return string.slice(0, -1);
+    return string.slice(0, -2);
 }
 
 function cutFirstLast(string) {
-    return string.slice(0, -2);
+    return string.slice( -2);
 }
 function keepFirst(string) {
     return string.slice(0, 1);
