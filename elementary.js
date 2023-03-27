@@ -44,7 +44,7 @@ function modulo (a, b) {
         return -modulo(-a, b);
     }
     if (b < 0) {
-        return -modulo(a, -b);
+        return modulo(a, -b);
     }
     if (a < b) {
         return a;
@@ -53,4 +53,4 @@ function modulo (a, b) {
 }
 
 
-console.log(divide(123, -22))
+console.log(modulo(123, -22))
