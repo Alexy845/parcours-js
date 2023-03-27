@@ -1,7 +1,7 @@
-function slice(str, start, end) {
-    let sliced = ''
+function slice (str, start, end) {
+    let sliced = '';
     for (let i = start; i < end; i++) {
-        sliced += str[i]
+        sliced += str[i];
     }
-    return sliced
+    return sliced;
 }
