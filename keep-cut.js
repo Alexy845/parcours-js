@@ -7,7 +7,7 @@ function cutLast(string) {
 }
 
 function cutFirstLast(string) {
-    return string.slice( -2);
+    return string.slice(0, -2);
 }
 function keepFirst(string) {
     return string.slice(0, 1);
@@ -18,3 +18,4 @@ function keepLast(string) {
 function keepFirstLast(string) {
     return string.slice(0, 2);
 }
+console.log(cutFirstLast('abcdef'));
