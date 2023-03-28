@@ -1,5 +1,13 @@
-function get (src, path) {
-  return path.split('.').reduce((acc, key) => {
-    return acc[key]
-  }, src)
-}
+function get(src, path) {
+    const props = path.split(".");
+    let value = src;
+    for (const prop of props) {
+      value = value[prop];
+      if (value === undefined) {
+        return undefined;
+      }
+    }
+    
+    return value;
+  }
+  
