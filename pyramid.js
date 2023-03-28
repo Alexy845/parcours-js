@@ -11,7 +11,8 @@ function pyramid(str, height) {
         line += " ";
       }
     }
-    output += line.trimRight() + "\n";
+    let padding = " ".repeat(midpoint - row);
+    output += padding + line.trimRight() + "\n";
   }
   return output.trim();
 }
