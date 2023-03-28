@@ -8,7 +8,7 @@ function sums(n) {
       if (remaining === 0) {
         partitions.add(currentPartition.slice().sort((a, b) => a - b).join(','));
       } else {
-        const start = currentPartition.length > 0 ? currentPartition[currentPartition.length - 1] : 1;
+        const start = currentPartition.length > 0 ? currentPartition[currentPartition.length - 1] : n === 1 ? 0 : 1;
         for (let i = start; i <= remaining; i++) {
           stack.push([[...currentPartition, i], remaining - i]);
         }
