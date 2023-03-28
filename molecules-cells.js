@@ -12,7 +12,7 @@ function RNA(string){
             } else if (string[i] === 'U') {
                 str += 'A';
             } else {
-                return null;
+                str += 'U'
             }
         }
     }
@@ -32,6 +32,8 @@ function DNA(string){
                 str += 'C';
             } else if (string[i] === 'T') {
                 str += 'A';
+            } else {
+                return null;
             }
         }
     }
