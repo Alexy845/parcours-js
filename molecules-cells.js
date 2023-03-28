@@ -9,10 +9,10 @@ function RNA(string){
                 str += 'G';
             } else if (string[i] === 'G') {
                 str += 'C';
-            } else if (string[i] === 'U') {
+            } else if (string[i] === 'T') {
                 str += 'A';
             } else {
-                str += 'U'
+                str += 'U';
             }
         }
     }
@@ -30,7 +30,7 @@ function DNA(string){
                 str += 'G';
             } else if (string[i] === 'G') {
                 str += 'C';
-            } else if (string[i] === 'T') {
+            } else if (string[i] === 'U') {
                 str += 'A';
             } else {
                 return null;
