@@ -3,7 +3,7 @@ function pyramid(str, height) {
   const strWidth = str.length;
 
   for (let i = 1; i <= height; i++) {
-    const spaces = " ".repeat(height*strWitdh - i*strWitdh - strWitdh);
+    const spaces = " ".repeat(height*strWidth - i*strWidth - strWidth);
     const elements = str.repeat(i * 2 + 1).slice(0, i * strWidth * 2 + strWidth);
     const line = spaces + elements;
 
