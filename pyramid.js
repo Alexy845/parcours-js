@@ -13,5 +13,5 @@ function pyramid(str, height) {
     }
     output += line.trimRight() + "\n";
   }
-  return output;
+  return output.trim();
 }
