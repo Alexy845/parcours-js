@@ -1,9 +1,8 @@
-function triangle(string, x) {
-    if (string && string.length > 0 && x && x > 0) {
-        let str = '';
-        for (let i = 0; i < x; i++) {
-            str += string;
-            console.log(str);
-        }
+function triangle(str, height) {
+    let output = "";
+    for (let i = 1; i <= height; i++) {
+        output += str.repeat(i) + "\n";
     }
+    return output;
 }
+console.log(triangle('#', 4));
