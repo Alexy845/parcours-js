@@ -20,3 +20,7 @@ function generatePartitions(n, max, partition, partitions) {
     return Array.from(partitions);
   }
   
+  test("sums(0) returns [[]]", ({ deepStrictEqual }) => {
+    deepStrictEqual(sums(0), [[]]);
+  });
+  
