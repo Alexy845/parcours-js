@@ -1,20 +1,18 @@
-function sums(n) {
-    const partitions = new Set();
-    const stack = [[[], n]];
-  
-    while (stack.length > 0) {
-      const [currentPartition, remaining] = stack.pop();
-  
-      if (remaining === 0) {
-        partitions.add(currentPartition.slice().sort((a, b) => a - b).join(','));
-      } else {
-        const start = currentPartition.length > 0 ? currentPartition[currentPartition.length - 1] : n === 1 ? 0 : 1;
-        for (let i = start; i <= remaining; i++) {
-          stack.push([[...currentPartition, i], remaining - i]);
-        }
+function generatePartitions(n, max, partition, partitions) {
+    if (n === 0) {
+      partitions.add(partition.slice());
+    } else {
+      for (let i = Math.min(max, n); i >= 1; i--) {
+        partition.push(i);
+        generatePartitions(n - i, i, partition, partitions);
+        partition.pop();
       }
     }
+  }
   
-    return n === 0 ? [] : Array.from(partitions, partition => partition.split(',').map(Number));
+  function sums(n) {
+    const partitions = new Set();
+    generatePartitions(n, n, [], partitions);
+    return Array.from(partitions);
   }
   
