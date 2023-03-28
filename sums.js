@@ -12,7 +12,11 @@ function generatePartitions(n, max, partition, partitions) {
   
   function sums(n) {
     const partitions = new Set();
-    generatePartitions(n, n, [], partitions);
+    if (n === 0) {
+      partitions.add([]);
+    } else {
+      generatePartitions(n, n, [], partitions);
+    }
     return Array.from(partitions);
   }
   
