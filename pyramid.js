@@ -1,18 +1,17 @@
-function pyramid(str, height) {
-  let output = "";
-  let width = height * 2 - 1;
-  let midpoint = Math.floor(width / 2);
-  for (let row = 0; row < height; row++) {
-    let line = "";
-    for (let col = 0; col < width; col++) {
-      if (midpoint - row <= col && midpoint + row >= col) {
-        line += str;
+function pyramid(n) {
+  const midpoint = Math.floor((2 * n - 1) / 2);
+
+  for (let i = 0; i < n; i++) {
+    let level = "";
+
+    for (let j = 0; j < 2 * n - 1; j++) {
+      if (midpoint - i <= j && midpoint + i >= j) {
+        level += "#";
       } else {
-        line += " ";
+        level += " ";
       }
     }
-    let padding = " ".repeat((width - line.trim().length) / 2);
-    output += padding + line.trimRight() + "\n";
+
+    console.log(level);
   }
-  return output.trim();
 }
