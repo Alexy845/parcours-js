@@ -1,17 +1,28 @@
 function pyramid(str, height) {
+  const strWidth = str.length;
   let output = "";
+
   for (let i = 0; i < height; i++) {
-    const spaces = " ".repeat(height - i - 1);
-    const elements = str.repeat(i * 2 + 1).slice(0, i * 2 + 1);
-    const line = spaces + elements;
+    let level = "";
+    const numOfChars = 2 * i + 1;
+    const numOfSpaces = (2 * height - 1 - numOfChars) / 2;
 
-    output += line;
+    level += " ".repeat(numOfSpaces * strWidth);
 
-    if (i < height - 1) {
+    for (let j = 0; j < numOfChars; j++) {
+      level += str;
+      if (j !== numOfChars - 1) {
+        level += " ";
+      }
+    }
+
+    output += level;
+    if (i !== height - 1) {
       output += "\n";
     }
   }
 
   return output;
 }
+
 console.log(pyramid("#", 4));
