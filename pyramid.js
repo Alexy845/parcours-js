@@ -9,7 +9,7 @@ function pyramid(str, height) {
 
     output += line;
 
-    if (i < height + 1) {
+    if (i < height) {
       output += "\n";
     }
   }
