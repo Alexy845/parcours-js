@@ -1,11 +1,7 @@
-function sameAmount(a, str, b) {
-    if (a.length !== b.length) {
-        return false;
-    }
-    for (let i = 0; i < a.length; i++) {
-        if (a[i] !== b[i]) {
-            return false;
-        }
-    }
-    return true;
-}
+function sameAmount(str, regExp1, regExp2) {
+    const matches1 = str.match(regExp1);
+    const matches2 = str.match(regExp2);
+  
+    return matches1 !== null && matches2 !== null && matches1.length === matches2.length;
+  }
+  
