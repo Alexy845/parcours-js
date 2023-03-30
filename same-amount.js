@@ -7,7 +7,8 @@ function sameAmount(str, regExp1, regExp2) {
     }
     if (regExp2.global === false ) {
         regExp2 = new RegExp(regExp2.source, 'g');
+    }else {
+        return matches1 !== null && matches2 !== null && matches1.length === matches2.length;
     }
-
-    return matches1 !== null && matches2 !== null && matches1.length === matches2.length;
+    
 }
