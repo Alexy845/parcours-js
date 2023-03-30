@@ -1,5 +1,6 @@
+const vowels = /[aeiou]/ig;
+
 function vowelDots(str) {
-    const vowels = /[aeiou]/ig;
     return str.replace(vowels, "$&.")
   }
 
