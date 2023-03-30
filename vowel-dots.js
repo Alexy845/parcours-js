@@ -1,14 +1,6 @@
-function vowelDots(str){
-    let vowels = ['a', 'e', 'i', 'o', 'u'];
-    let output = '';
-    for (let i = 0; i < str.length; i++) {
-        if (vowels.includes(str[i])) {
-            output += '.';
-        } else {
-            output += str[i];
-        }
-    }
-    return output;    
-}
+function vowelDots(str) {
+    const vowels = /[aeiou]/ig;
+    return str.replace(vowels, (match) => match + '.');
+  }
 
-console.log(vowelDots('hello world'));
+console.log(vowelDots('Hello World!'));
