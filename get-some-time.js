@@ -1,4 +1,8 @@
 function firstDayWeek(weekNumber, year) {
+
+    if (year < 100 && year >= 0) {
+      year += 2000;
+    }
     const januaryFirst = new Date(year, 0, 1);
     let daysToAdd = (weekNumber - 1) * 7 - (januaryFirst.getDay() + 6) % 7;
   
