@@ -9,10 +9,10 @@ function timeTravel(timeObj, date) {
     const {days = 0, hours = 0, minutes = 0, seconds = 0 } = timeObj;
     const newDate = new Date(date);
   
-    newDate.setDate(newDate.getDate() + days);
-    newDate.setHours(newDate.getHours() + hours);
-    newDate.setMinutes(newDate.getMinutes() + minutes);
-    newDate.setSeconds(newDate.getSeconds() + seconds);
+    newDate.setDate(Date.getDate() + days);
+    newDate.setHours(Date.getHours() + hours);
+    newDate.setMinutes(Date.getMinutes() + minutes);
+    newDate.setSeconds(Date.getSeconds() + seconds);
   
     return newDate;
   }
