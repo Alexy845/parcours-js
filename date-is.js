@@ -1,3 +1,6 @@
 function isValid(date){
-    return date instanceof Date && !isNaN(date) && date.toString() !== 'Invalid Date';
+    if (date > 0){
+        return true;
+    }
+    return date instanceof Date && !isNaN(date);
 }
