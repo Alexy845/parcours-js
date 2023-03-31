@@ -6,7 +6,7 @@ function addWeek(date){
 }
 
 function timeTravel(timeObj, date) {
-    const {days = 0, hours = 0, minutes = 0, seconds = 0 } = timeObj;
+    const { days = 0, hours = 0, minutes = 0, seconds = 0 } = timeObj;
     const newDate = new Date(date);
 
     newDate.setDate(date.getDate() + days);
@@ -15,5 +15,6 @@ function timeTravel(timeObj, date) {
     newDate.setSeconds(date.getSeconds() + seconds);
   
     return newDate;
-  }
+}
+
   
