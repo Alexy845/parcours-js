@@ -8,14 +8,12 @@ function addWeek(date){
 function timeTravel(timeObj, date) {
     const { years = 0, months = 0, days = 0, hours = 0, minutes = 0, seconds = 0 } = timeObj;
     const newDate = new Date(date);
-  
-    newDate.setFullYear(date.getFullYear() + years);
-    newDate.setMonth(date.getMonth() + months);
+
     newDate.setDate(date.getDate() + days);
-  
     newDate.setHours(date.getHours() + hours);
     newDate.setMinutes(date.getMinutes() + minutes);
     newDate.setSeconds(date.getSeconds() + seconds);
   
     return newDate;
   }
+  
