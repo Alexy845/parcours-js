@@ -22,3 +22,9 @@ function isFuture(date){
         return true;
     }
 }
+
+function isPast(date){
+    if(date < Date.now()){
+        return true;
+    }
+}
