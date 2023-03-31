@@ -5,15 +5,15 @@ function addWeek(date){
     return days[dayn]
 }
 
-function timeTravel(timeObj, date) {
-    const {days = 0, hours = 0, minutes = 0, seconds = 0 } = timeObj;
+function timeTravel(timeObj) {
+    const { date, days = 0, hours = 0, minutes = 0, seconds = 0 } = timeObj;
     const newDate = new Date(date);
   
-    newDate.setDate(Date.getDate() + days);
-    newDate.setHours(Date.getHours() + hours);
-    newDate.setMinutes(Date.getMinutes() + minutes);
-    newDate.setSeconds(Date.getSeconds() + seconds);
+    newDate.setDate(date.getDate() + days);
+    newDate.setHours(date.getHours() + hours);
+    newDate.setMinutes(date.getMinutes() + minutes);
+    newDate.setSeconds(date.getSeconds() + seconds);
   
     return newDate;
-  }
+}
   
