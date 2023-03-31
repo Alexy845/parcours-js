@@ -16,3 +16,9 @@ function isBefore(date, date2){
         return true;
     }
 }
+
+function isFuture(date){
+    if (date > Date.now()){
+        return true;
+    }
+}
