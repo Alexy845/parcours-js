@@ -9,5 +9,4 @@ function isAfter(date, date2){
     if (date > date2){
         return true;
     }
-    return date instanceof date2 && !isNaN(date);
 }
