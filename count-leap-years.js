@@ -1,3 +1,5 @@
-function countLeapYears(years) {
-  return years.filter(isLeapYear).length;
+function countLeapYears(date){
+    if (date.getFullYear() % 4 === 0){
+        return true;
+    }
 }
