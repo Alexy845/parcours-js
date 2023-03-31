@@ -7,9 +7,9 @@ function addWeek(date){
 
 function timeTravel(timeObj) {
     const date = new Date(timeObj.date);
-    date.setHours(timeObj.setHours);
-    date.setMinutes(timeObj.setMinutes);
-    date.setSeconds(timeObj.setSeconds);
+    date.setHours(timeObj.hour);
+    date.setMinutes(timeObj.minute);
+    date.setSeconds(timeObj.second);
   
     return date;
 }
