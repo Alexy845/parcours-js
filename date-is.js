@@ -24,6 +24,9 @@ function isFuture(date){
 }
 
 function isPast(date){
+    if (isValid(date)){
+        return true;
+    }
     if(date < Date.now()){
         return true;
     }
