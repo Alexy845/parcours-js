@@ -16,9 +16,9 @@ function isLeapYear(date){
     }
 }
 
-function isLastDayOfMonth(date){
-    if (date.getDay() === 31){
-        return true;
-    }
-
+function isLastDayOfMonth(date) {
+    const nextMonth = new Date(date.getFullYear(), date.getMonth() + 1, 1);
+    const lastDay = new Date(nextMonth - 86400000);
+    return date.getDate() === lastDay.getDate();
 }
+  
