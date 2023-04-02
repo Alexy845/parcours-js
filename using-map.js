@@ -21,16 +21,16 @@
 //     });
 // }
 const citiesOnly = arr => arr.map(item => item.city);
+
 const upperCasingStates = arr => arr.map(item => item.replace(/\b\w/g, letter => letter.toUpperCase()));
 
 function fahrenheitToCelsius(temps) {
-    const result = [];
-    for (let i = 0; i < temps.length; i++) {
-      const celsius = Math.floor((parseInt(temps[i]) - 32) * 5/9);
-      result.push(celsius.toString() + '°C');
-    }
+    const result = temps.map((temp) => {
+      const celsius = Math.floor((parseInt(temp) - 32) * 5/9);
+      return celsius.toString() + '°C';
+    });
     return result;
-}
+  }
   
 
   
