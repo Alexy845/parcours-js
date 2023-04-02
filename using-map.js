@@ -32,10 +32,16 @@ function fahrenheitToCelsius(temps) {
     return result;
   }
   
-function trimTemp(temps) {
+  function trimTemp(temps) {
     const result = temps.map((temp) => {
-      const trimmed = temp.replace('°F', '');
-      return trimmed;
+      const trimmedTemp = temp.temperature.replace(/\s/g, '');
+      return {
+        city: temp.city,
+        state: temp.state,
+        region: temp.region,
+        temperature: trimmedTemp,
+      };
     });
     return result;
   }
+  
