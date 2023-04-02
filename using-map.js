@@ -27,7 +27,7 @@ function fahrenheitToCelsius(temps) {
     const result = [];
     for (let i = 0; i < temps.length; i++) {
       const celsius = Math.floor((parseInt(temps[i]) - 32) * 5/9);
-      result.push(celsius.toString());
+      result.push(celsius.toString() + '°C');
     }
     return result;
 }
