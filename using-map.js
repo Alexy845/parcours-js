@@ -3,3 +3,9 @@ function citiesOnly(arr) {
     return item.city;
   });
 }
+
+function upperCasingStates(arr) {
+  return arr.map(function (item) {
+    return item.state.toUpperCase();
+  });
+}
