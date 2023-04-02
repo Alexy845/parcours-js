@@ -13,3 +13,9 @@ const sumOrMul = (arr, start = 0) => {
       }
     }, start);
   };
+
+const funcExec = (arr, start = 0) => {
+    return arr.reduce((acc, curr) => {
+      return acc + curr(start);
+    }, start);
+  }
