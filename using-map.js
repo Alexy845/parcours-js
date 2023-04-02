@@ -5,9 +5,10 @@ function citiesOnly(arr) {
 }
 
 function upperCasingStates(arr) {
-    return arr.map(function(item) {
-      return item.charAt(0).toUpperCase() + item.slice(1);
+    return arr.map(function (item) {
+      return item.replace(/\b\w/g, function (match) {
+        return match.toUpperCase();
+      });
     });
   }
-  
   
