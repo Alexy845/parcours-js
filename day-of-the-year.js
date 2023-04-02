@@ -4,4 +4,5 @@ function dayOfTheYear(date) {
     const diffInDays = diffInMilliseconds / (1000 * 60 * 60 * 24); // la différence en jours
     return Math.floor(diffInDays) + 1; // on arrondit le nombre de jours et on ajoute 1 car le 1er janvier compte pour le premier jour de l'année
   }
-  
+console.log(dayOfTheYear(new Date('0001-01-01')));
+
