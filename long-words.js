@@ -7,5 +7,5 @@ const longWords = (arr) => {
   };
 
   const noLongWords = (arr) => {
-    return arr.some((elem) => typeof elem === 'string' && elem.length <= 7 )
+    return arr.some((elem) => typeof elem !== 'string' && elem.length <= 7 )
   }
