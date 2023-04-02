@@ -49,7 +49,7 @@ function trimTemp(temps) {
     const result = temps.map((temp) => {
       const trimmedTemp = temp.temperature.replace(/\s/g, '');
       const celsius = Math.floor((parseInt(trimmedTemp) - 32) * 5/9);
-      const state = temp.state.toLowerCase().replace(/\b\w/g, (l) => l.toUpperCase());
+      const state = temp.state.toLowerCase().replace(/\b\w/g, l => l.toUpperCase());
       return `${celsius}°Celsius in ${temp.city}, ${state}`;
     });
     return result;
