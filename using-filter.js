@@ -7,7 +7,7 @@ const filterStartVowel = (states) => {
 }
 
 const filter5Vowels = (states) => {
-  return states.filter(state => state.match(/[aeiou]/gi).length === 5);
+  return states.filter(state => state.match(/[aeiou]/gi).length > 5);
 }
 
 const filter1DistinctVowel = (states) => {
