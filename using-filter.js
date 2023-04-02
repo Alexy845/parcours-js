@@ -18,10 +18,27 @@ function filter1DistinctVowel(states) {
   }
   
   
-const multiFilter = (states) => {
-  return states.filter(state => {
-    const vowels = state.match(/[aeiou]/gi);
-    const distinctVowels = new Set(vowels);
-    return distinctVowels.size === 1 && state.length > 7;
-  });
-}
+  function multiFilter(states) {
+    return states.filter((state) => {
+
+      if (state.capital.length < 8) {
+        return false;
+      }
+      
+      const firstLetter = state.name[0].toLowerCase();
+      if (['a', 'e', 'i', 'o', 'u'].includes(firstLetter)) {
+        return false;
+      }
+      
+      if (!state.tag.match(/[aeiou]/gi)) {
+        return false;
+      }
+      
+      if (state.region === "South") {
+        return false;
+      }
+      
+      return true;
+    });
+  }
+  
