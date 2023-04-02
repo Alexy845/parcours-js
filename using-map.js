@@ -6,11 +6,8 @@ function citiesOnly(arr) {
 
 function upperCasingStates(arr) {
     return arr.map(function(item) {
-      return item.split(' ')
-                 .map(function(word) {
-                   return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-                 })
-                 .join(' ');
+      return item.charAt(0).toUpperCase() + item.slice(1);
     });
   }
+  
   
