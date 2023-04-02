@@ -1,13 +1,15 @@
-function dayOfTheYear(date) {
-    const year = date.getFullYear();
-    const month = date.getMonth();
-    const day = date.getDate();
-    const startOfYear = new Date(year, 0, 1);
-    const diffInMilliseconds = date.getTime() - startOfYear.getTime();
-    const diffInDays = diffInMilliseconds / (1000 * 60 * 60 * 24);
-    const dayOfYear = Math.ceil(diffInDays);
-    return dayOfYear;
-  }
-  
-console.log(dayOfTheYear(new Date('0001-01-01')));
+function dayOfTheYear(date){
+    let newDate = date.getFullYear()
+    let time = new Date('0001-01-01')
+    time.setFullYear(newDate)
+    let countDay = 0
+    for(let i = 0;i<1000;i++){
+        countDay = i
+        if((time.getMonth() === date.getMonth())&&(time.getDate === date.getDate)){
+            return countDay+date.getDate()
+        }
+        time.setHours(30)
 
+    }
+    console.log(time)
+}
