@@ -32,7 +32,7 @@ function fahrenheitToCelsius(temps) {
     return result;
   }
   
-  function trimTemp(temps) {
+function trimTemp(temps) {
     const result = temps.map((temp) => {
       const trimmedTemp = temp.temperature.replace(/\s/g, '');
       return {
@@ -44,4 +44,18 @@ function fahrenheitToCelsius(temps) {
     });
     return result;
   }
-  
+
+function tempForescasts(temps) {
+    const result = temps.map((temp) => {
+      const trimmedTemp = temp.temperature.replace(/\s/g, '');
+      const celsius = Math.floor((parseInt(trimmedTemp) - 32) * 5/9);
+      return {
+        city: temp.city,
+        state: temp.state,
+        region: temp.region,
+        temperature: trimmedTemp,
+        celsius: celsius.toString() + '°C',
+      };
+    });
+    return result;
+  }
