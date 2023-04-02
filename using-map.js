@@ -45,12 +45,13 @@ function trimTemp(temps) {
     return result;
   }
 
-const tempForecasts = temps => temps.map(temp => {
-    const trimmedTemp = temp.temperature.replace(/\s/g, '');
-    return {
-      city: temp.city,
-      state: temp.state,
-      region: temp.region,
-      temperature: trimmedTemp,
-    };
-  });
+  function tempForecasts(forecasts) {
+    return forecasts.map(({ city, temperature, state }) => {
+      const temperatureCelsius = (parseInt(temperature) - 32) * (5/9);
+      const temperatureString = `${Math.round(temperatureCelsius)}°Celsius`;
+      const cityString = city.charAt(0).toUpperCase() + city.slice(1);
+      const stateString = state.charAt(0).toUpperCase() + state.slice(1);
+      return `${temperatureString} in ${cityString}, ${stateString}`;
+    });
+  }
+  
