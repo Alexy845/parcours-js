@@ -5,7 +5,8 @@ function dayOfTheYear(date) {
     const startOfYear = new Date(year, 0, 1);
     const diffInMilliseconds = date.getTime() - startOfYear.getTime();
     const diffInDays = diffInMilliseconds / (1000 * 60 * 60 * 24);
-    return Math.ceil(diffInDays);
+    const dayOfYear = Math.ceil(diffInDays);
+    return dayOfYear;
   }
   
 console.log(dayOfTheYear(new Date('0001-01-01')));
