@@ -45,7 +45,7 @@ function trimTemp(temps) {
     return result;
   }
 
-const tempForecast = temps => temps.map(temp => {
+const tempForecasts = temps => temps.map(temp => {
     const trimmedTemp = temp.temperature.replace(/\s/g, '');
     return {
       city: temp.city,
