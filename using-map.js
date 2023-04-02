@@ -45,13 +45,18 @@ function trimTemp(temps) {
     return result;
   }
 
-function tempForecasts(forecasts) {
-    return forecasts.map(({ city, temperature, state }) => {
-      const temperatureCelsius = (parseInt(temperature) - 32) * (5/9);
-      const temperatureString = `${Math.round(temperatureCelsius)}°Celsius`;
-      const cityString = city.charAt(0).toUpperCase() + city.slice(1);
-      const stateString = state.charAt(0).toUpperCase() + state.slice(1);
-      return `${temperatureString} in ${cityString}, ${stateString}`;
+function tempForecasts(temps) {
+    const result = temps.map((temp) => {
+      const trimmedTemp = temp.temperature.replace(/\s/g, '');
+      const celsius = Math.floor((parseInt(trimmedTemp) - 32) * 5/9);
+      return {
+        city: temp.city,
+        state: temp.state.charAt(0).toUpperCase() + temp.state.slice(1),
+        region: temp.region,
+        temperature: trimmedTemp,
+        celsius: celsius.toString() + '°C',
+      };
     });
+    return result;
 }
   
