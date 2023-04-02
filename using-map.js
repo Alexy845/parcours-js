@@ -45,11 +45,12 @@ function trimTemp(temps) {
     return result;
   }
 
-  function tempForecasts(states) {
-    const temperatureData = getTemperatureData(states);
-    return temperatureData.map(
-      ({ temperature, city, state }) =>
-        `${temperature}°Celsius in ${city}, ${state}`
-    );
-  }
-  
+const tempForecast = temps => temps.map(temp => {
+    const trimmedTemp = temp.temperature.replace(/\s/g, '');
+    return {
+      city: temp.city,
+      state: temp.state,
+      region: temp.region,
+      temperature: trimmedTemp,
+    };
+  });
