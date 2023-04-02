@@ -45,12 +45,12 @@ function trimTemp(temps) {
     return result;
   }
 
-function tempForecasts(temps) {
+  function tempForecasts(temps) {
     const result = temps.map((temp) => {
       const trimmedTemp = temp.temperature.replace(/\s/g, '');
       const celsius = Math.floor((parseInt(trimmedTemp) - 32) * 5/9);
-      return `${celsius}°Celsius in ${temp.city}, ${temp.state}`;
+      const capitalizedState = temp.state.charAt(0).toUpperCase() + temp.state.slice(1).toLowerCase();
+      return `${celsius}°Celsius in ${temp.city}, ${capitalizedState}`;
     });
     return result;
 }
-  
