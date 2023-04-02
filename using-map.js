@@ -4,11 +4,5 @@ function citiesOnly(arr) {
   });
 }
 
-function upperCasingStates(arr) {
-    return arr.map(function (item) {
-      return item.replace(/\b\w/g, function (match) {
-        return match.toUpperCase();
-      });
-    });
-  }
-  
+
+const upperCasingStates = arr => arr.map(item => item.replace(/\b\w/g, letter => letter.toUpperCase()));
