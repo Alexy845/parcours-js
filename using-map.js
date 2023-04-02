@@ -5,7 +5,7 @@ function citiesOnly(arr) {
 }
 function upperCasingStates(arr) {
     return arr.map(function(item) {
-      if (item.state) {
+      if (item && item.state) {
         return item.state.charAt(0).toUpperCase() + item.state.slice(1);
       } else {
         return "";
