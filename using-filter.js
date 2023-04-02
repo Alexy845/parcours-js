@@ -10,13 +10,13 @@ const filter5Vowels = (states) => {
     return states.filter(state => (state.match(/[aeiou]/gi)?.length ?? 0) >= 5); 
 }
   
-const filter1DistinctVowel = (states) => {
-    return states.filter(state => {
-      const vowels = state.match(/[aeiou]/gi);
-      const distinctVowels = new Set(vowels);
-      return distinctVowels.size === 1 && vowels.length > 1;
+function filter1DistinctVowel(states) {
+    return states.filter((state) => {
+      const vowels = new Set(state.toLowerCase().match(/[aeiou]/g));
+      return vowels.size === 1 && state.match(/[aeiou]/gi).length > 1;
     });
   }
+  
   
 const multiFilter = (states) => {
   return states.filter(state => {
