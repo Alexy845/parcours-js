@@ -22,9 +22,6 @@
 // }
 const citiesOnly = arr => arr.map(item => item.city);
 const upperCasingStates = arr => arr.map(item => item.replace(/\b\w/g, letter => letter.toUpperCase()));
-const fahrenheitToCelsius = arr => arr.map(item => {
-    const fahrenheit = parseFloat(item);
-    const celsius = Math.round((fahrenheit - 32) * 5 / 9);
-    return `${celsius}°C`;
-});
+const fahrenheitToCelsius = arr => arr.map(item => Math.floor((item - 32) * 5 / 9) + "°C");
+
   
