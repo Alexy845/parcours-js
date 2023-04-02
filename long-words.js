@@ -5,4 +5,7 @@ const longWords = (arr) => {
   const oneLongWord = (arr) => {
     return arr.some((elem) => typeof elem === 'string' && elem.length >= 10);
   };
-  
+
+  const noLongWords = (arr) => {
+    return arr.some((elem) => typeof elem === 'string' && elem.length <= 7 )
+  }
