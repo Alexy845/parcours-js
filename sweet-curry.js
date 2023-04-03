@@ -1,5 +1,7 @@
 function mult2(x) {
-    return x * 2;
+    return function(y) {
+        return x * y;
+    }
 }
 
 function add3(x) {
