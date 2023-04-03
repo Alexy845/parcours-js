@@ -14,5 +14,11 @@ function add3(x) {
   
 
 function sub4(x) {
-    return x - 4;
+    return function(y) {
+        return function(z) {
+            return function(a) {
+                return x - y - z - a;
+            }   
+        }
+    }
 }
