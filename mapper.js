@@ -6,8 +6,9 @@ const map = (arr, callback) => {
     return result;
 }
 
-const flatMap = (arr, callback) => {
+function flatMap(arr, func) {
     return arr.reduce((acc, curr) => {
-      return acc.concat(callback(curr));
+      return acc.concat(func(curr));
     }, []);
   }
+  
