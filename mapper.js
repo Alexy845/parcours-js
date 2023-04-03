@@ -5,18 +5,19 @@ const map = (arr, callback) => {
     }
     return result;
 }
-
 function flatMap(arr, fn) {
-    const result = [];
-    for (const val of arr) {
+    return arr.reduce((result, val) => {
       const items = fn(val);
       if (items != null) {
-        for (const item of items) {
-          result.push(item);
+        if (Array.isArray(items)) {
+          result.push(...items);
+        } else {
+          result.push([items]);
         }
       }
-    }
-    return result;
+      return result;
+    }, []);
   }
+  
   
   
