@@ -5,6 +5,7 @@ const map = (arr, callback) => {
     }
     return result;
 }
+
 function flatMap(arr, fn) {
     return arr.reduce((result, val) => {
       const items = fn(val);
@@ -14,6 +15,8 @@ function flatMap(arr, fn) {
         } else {
           result.push(items);
         }
+      } else {
+        result.push(undefined);
       }
       return result;
     }, []);
