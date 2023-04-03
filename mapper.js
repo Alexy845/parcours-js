@@ -7,18 +7,14 @@ const map = (arr, callback) => {
 }
 
 function flatMap(arr, fn) {
-    return arr.reduce((result, val) => {
-      const items = fn(val);
-      if (items != null) {
-        if (Array.isArray(items)) {
-          result.push(...items);
-        } else {
-          result.push(items);
-        }
+    return arr.reduce((acc, val, i) => {
+      const result = fn(val, i);
+      if (result != null) {
+        return acc.concat(result);
       } else {
-        result.push(undefined);
+        return acc;
       }
-      return result;
     }, []);
   }
+  
   
