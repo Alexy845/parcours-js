@@ -29,9 +29,9 @@ export const getActive = () => {
 
 export const getBonannoPisano = () =>{
     const arr = []
-    const BonnanoPisano = document.getElementById("BonannoPisano")
+    const bonnanoPisano = document.getElementById("BonannoPisano")
     const nonBonnano = Array.from(document.querySelectorAll('a:not(#BonannoPisano)'))
-    arr.push(BonnanoPisano)
+    arr.push(bonnanoPisano)
     arr.push(nonBonnano)
     return arr
 }
