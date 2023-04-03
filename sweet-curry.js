@@ -6,9 +6,12 @@ function mult2(x) {
 
 function add3(x) {
     return function(y) {
-        return x + y;
+      return function(z) {
+        return x + y + z;
+      }
     }
-}
+  }
+  
 
 function sub4(x) {
     return x - 4;
