@@ -7,8 +7,13 @@ const map = (arr, callback) => {
 }
 
 function flatMap(arr, fn) {
-    return arr.reduce((acc, val) => {
-      return acc.concat(fn(val));
+    return arr.reduce((acc, val, i) => {
+      const result = fn(val, i);
+      if (result != null) {
+        return acc.concat(result);
+      } else {
+        return acc;
+      }
     }, []);
   }
   
