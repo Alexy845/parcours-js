@@ -7,8 +7,16 @@ const map = (arr, callback) => {
 }
 
 function flatMap(arr, func) {
-    return arr.reduce((acc, curr) => {
-      return acc.concat(func(curr));
+    return arr.reduce((acc, curr, index) => {
+      const result = func(curr);
+      if (result !== undefined) {
+        if (Array.isArray(result)) {
+          acc.push(...result.map((value) => `${index}: ${value}`));
+        } else {
+          acc.push(`${index}: ${result}`);
+        }
+      }
+      return acc;
     }, []);
   }
   
