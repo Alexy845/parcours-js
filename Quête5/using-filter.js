@@ -41,4 +41,4 @@ function filter1DistinctVowel(states) {
       return true;
     });
   }
-  
+
