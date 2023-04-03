@@ -12,9 +12,14 @@ function foldRight(tab, func, acc){
     return acc;
 }
 
-function reduce(tab, func, acc){
-    for(let i = 0; i < tab.length; i++){
-        acc = func(acc, tab[i], i, tab);
+function reduce(arr, func) {
+    if (arr.length < 1) {
+      throw new Error('Array must have at least one element');
+    }
+    let acc = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+      acc = func(acc, arr[i], i, arr);
     }
     return acc;
-}
+  }
+  
