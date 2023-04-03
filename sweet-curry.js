@@ -6,7 +6,6 @@ function mult2(x) {
 
 function add3(x) {
     return function(y) {
-        y = y + 3;
         return x + y;
     }
 }
