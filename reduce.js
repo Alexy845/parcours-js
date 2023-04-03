@@ -14,7 +14,7 @@ function foldRight(tab, func, acc){
 
 function reduce(arr, func) {
     if (arr.length < 1) {
-      throw new Error('Array must have at least one element');
+      throw new Error('Error');
     }
     let acc = arr[0];
     for (let i = 1; i < arr.length; i++) {
@@ -22,4 +22,6 @@ function reduce(arr, func) {
     }
     return acc;
   }
+
+
   
