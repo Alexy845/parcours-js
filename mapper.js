@@ -12,12 +12,10 @@ function flatMap(arr, fn) {
         if (Array.isArray(items)) {
           result.push(...items);
         } else {
-          result.push([items]);
+          result.push(items);
         }
       }
       return result;
     }, []);
   }
-  
-  
   
