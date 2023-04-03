@@ -6,11 +6,9 @@ const map = (arr, callback) => {
     return result;
 }
 
-function flatMap(arr, func) {
-    return arr.reduce((acc, curr) => {
-      const mapped = func(curr);
-      return Array.isArray(mapped) ? acc.concat(mapped) : acc.concat([mapped]);
+function flatMap(arr, fn) {
+    return arr.reduce((acc, val) => {
+      return acc.concat(fn(val));
     }, []);
   }
-  
   
