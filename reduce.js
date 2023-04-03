@@ -23,5 +23,15 @@ function reduce(arr, func) {
     return acc;
   }
 
+  function reduceRight(arr, func) {
+    if (arr.length < 1) {
+      throw new Error('Error');
+    }
+    let acc = arr[arr.length - 1];
+    for (let i = arr.length - 2; i >= 0; i--) {
+      acc = func(acc, arr[i], i, arr);
+    }
+    return acc;
+  }
 
   
