@@ -14,10 +14,19 @@ export const getArchitects = () => {
   
   export const getActive = () => {
     const [classicalArchitects, nonClassicalArchitects] = getClassical()
+  
+    console.log('classicalArchitects:', classicalArchitects)
+    console.log('nonClassicalArchitects:', nonClassicalArchitects)
+  
     const activeClassicalArchitects = classicalArchitects.filter(a => a.classList.contains('active'))
     const nonActiveClassicalArchitects = classicalArchitects.filter(a => !a.classList.contains('active'))
+  
+    console.log('activeClassicalArchitects:', activeClassicalArchitects)
+    console.log('nonActiveClassicalArchitects:', nonActiveClassicalArchitects)
+  
     return [activeClassicalArchitects, [...nonActiveClassicalArchitects, ...nonClassicalArchitects, ...nonArchitects]]
   }
+  
   
   export const getBonannoPisano = () => {
     const classicalArchitects = document.querySelectorAll('.architect.classical.active:not(#BonannoPisano)')
@@ -25,4 +34,3 @@ export const getArchitects = () => {
     const targetArchitect = document.getElementById('BonannoPisano')
     return [targetArchitect, remainingArchitects]
   }
-  
