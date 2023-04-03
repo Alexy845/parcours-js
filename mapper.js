@@ -6,15 +6,17 @@ const map = (arr, callback) => {
     return result;
 }
 
-function flatMap(arr, fn) {
-    return arr.reduce((acc, val, i) => {
-      const result = fn(val, i);
-      if (result != null) {
-        return acc.concat(result);
-      } else {
-        return acc;
-      }
-    }, []);
-  }
+function flatMap(array, func) {
+    const result = [];
+    for (let i = 0; i < array.length; i++) {
+        const mapp = func(array[i], i, array);
+        if (Array.isArray(mapp)) {
+            result.push(...mapp);
+        } else {
+            result.push(mapp);
+        }
+    }
+    return result;
+}
   
   
