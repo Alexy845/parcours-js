@@ -1,28 +1,28 @@
 export const getArchitects = () => {
-    const architects = []
-    const notArchitects = []
-    const people = document.querySelectorAll('a')
-  
-    for (const person of people) {
-      if (person.classList.contains('architect')) {
-        architects.push(person)
-      } else {
-        notArchitects.push(person)
-      }
-    }
-  
-    return [architects, notArchitects]
+    const architects = Array.from(document.querySelectorAll('a'))
+    const nonArchitects = Array.from(document.querySelectorAll(':not(a)'))
+    return [architects, nonArchitects]
   }
   
   
-export const getClassical = () => {
-
-}
-
-export const getActive = () => {
-
-}
-
-export const getBonannoPisano = () => {
-
-}
+  export const getClassical = () => {
+    const [architects, nonArchitects] = getArchitects()
+    const classicalArchitects = architects.filter(a => a.classList.contains('classical'))
+    const nonClassicalArchitects = architects.filter(a => !a.classList.contains('classical'))
+    return [classicalArchitects, [...nonClassicalArchitects, ...nonArchitects]]
+  }
+  
+  export const getActive = () => {
+    const [classicalArchitects, nonClassicalArchitects] = getClassical()
+    const activeClassicalArchitects = classicalArchitects.filter(a => a.classList.contains('active'))
+    const nonActiveClassicalArchitects = classicalArchitects.filter(a => !a.classList.contains('active'))
+    return [activeClassicalArchitects, [...nonActiveClassicalArchitects, ...nonClassicalArchitects, ...nonArchitects]]
+  }
+  
+  export const getBonannoPisano = () => {
+    const classicalArchitects = document.querySelectorAll('.architect.classical.active:not(#BonannoPisano)')
+    const remainingArchitects = Array.from(classicalArchitects).filter(a => a.classList.contains('active'))
+    const targetArchitect = document.getElementById('BonannoPisano')
+    return [targetArchitect, remainingArchitects]
+  }
+  
