@@ -1,16 +1,19 @@
 export const getArchitects = () => {
     const architects = []
-    const nonArchitects = []
-    const people = document.querySelectorAll('.person')
-    people.forEach((person) => {
+    const notArchitects = []
+    const people = document.querySelectorAll('a')
+  
+    for (const person of people) {
       if (person.classList.contains('architect')) {
-        architects.push(person.querySelector('a'))
+        architects.push(person)
       } else {
-        nonArchitects.push(person)
+        notArchitects.push(person)
       }
-    })
-    return [architects, nonArchitects]
-}
+    }
+  
+    return [architects, notArchitects]
+  }
+  
   
 export const getClassical = () => {
 
