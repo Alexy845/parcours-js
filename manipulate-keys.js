@@ -17,17 +17,16 @@ function mapKeys(obj, fn) {
 }
 
 function reduceKeys(obj, fn, acc) {
+    let undef = false;
     if (acc === undefined) {
-      acc = '';
+        acc = 0;
+        undef = true;
     }
-  
-    let result = acc;
-    for (const key in obj) {
-      if (result !== '') {
-        result += ', ';
-      }
-      result = fn(result, key);
-    }
+
+    let result = Object.keys(obj).reduce((acc, key) => {
+        return fn(acc, key);
+    }, acc);
+
     return result;
-  }
-  
+}
+
