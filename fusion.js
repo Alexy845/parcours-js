@@ -2,6 +2,8 @@ function fusion(obj1, obj2) {
     if (!obj1) return obj2;
     if (!obj2) return obj1;
     let fusioned = {};
+
+    // fusion des clés de obj1 et obj2
     for (let key in obj1) {
         if (!obj1.hasOwnProperty(key)) continue;
         if (obj2.hasOwnProperty(key)) {
@@ -24,6 +26,8 @@ function fusion(obj1, obj2) {
             fusioned[key] = obj1[key];
         }
     }
+
+    // ajoute les clés de obj2 qui ne sont pas dans obj1
     for (let key in obj2) {
         if (!obj2.hasOwnProperty(key)) continue;
         if (!obj1.hasOwnProperty(key)) {
