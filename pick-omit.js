@@ -1,10 +1,10 @@
 function pick (obj, str){
     const newObj = {};
-    const keys = Object.keys(obj);
-    newObj.forEach(element => {
-        if(keys.includes(str)){
-            newObj[element] = obj[element];
+    Object.keys(obj).forEach((key) => {
+        if (str.includes(key)) {
+        newObj[key] = obj[key];
         }
     });
     return newObj;
 }
+console.log(pick([['firstName', 'lastName']]))
