@@ -19,7 +19,7 @@ function mapKeys(obj, fn) {
 function reduceKeys(obj, fn, acc) {
     let undef = false;
     if (acc === undefined) {
-        acc = 0;
+        acc = "";
         undef = true;
     }
 
@@ -27,14 +27,6 @@ function reduceKeys(obj, fn, acc) {
         return fn(acc, key);
     }, acc);
 
-    if (typeof result !== "number") {
-        if (result.slice(0, 2) === ", ") {
-            result = result.slice(2);
-        }
-        if (undef && result[0] === ":") {
-            result = result.slice(1);
-        }
-    }
     return result;
 }
 
