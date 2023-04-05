@@ -7,4 +7,3 @@ function pick (obj, str){
     });
     return newObj;
 }
-console.log(pick([['firstName', 'lastName']]))
