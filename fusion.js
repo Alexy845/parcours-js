@@ -10,7 +10,7 @@ function fusion(obj1, obj2) {
 
    // Si chaînes de caractères, on concatène
     if (typeof obj1 === "string" && typeof obj2 === "string") {
-        return { str: obj1 + " " + obj2 };
+        return obj1 + " " + obj2;
     }
 
     // Si nombres, on additionne
