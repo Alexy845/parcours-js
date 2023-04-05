@@ -18,12 +18,13 @@ function mapKeys(obj, fn) {
 
 function reduceKeys(obj, fn, acc) {
     if (acc === undefined) {
-        acc = 0;
+      acc = '';
     }
-
+  
     let result = acc;
     for (const key in obj) {
-        result = fn(result, key);
+      result = fn(result, key);
     }
     return result;
-}
+  }
+  
