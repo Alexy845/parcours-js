@@ -1,9 +1,16 @@
-function pick (obj, str){
-    const newObj = {};
-    Object.keys(obj).forEach((key) => {
-        if (str.includes(key)) {
-        newObj[key] = obj[key];
-        }
-    });
-    return newObj;
-}
+function pickKeys(obj, keys) {
+    if (typeof keys === 'string') {
+      keys = [keys];
+    }
+    
+    const result = {};
+    
+    for (const key of keys) {
+      if (key in obj) {
+        result[key] = obj[key];
+      }
+    }
+    
+    return result;
+  }
+  
