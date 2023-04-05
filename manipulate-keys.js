@@ -23,6 +23,9 @@ function reduceKeys(obj, fn, acc) {
   
     let result = acc;
     for (const key in obj) {
+      if (result !== '') {
+        result += ', ';
+      }
       result = fn(result, key);
     }
     return result;
