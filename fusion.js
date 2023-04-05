@@ -15,7 +15,7 @@ function fusion(obj1, obj2) {
 
     // Si nombres, on additionne
     if (typeof obj1 === "number" && typeof obj2 === "number") {
-        return { num: obj1 + obj2 };
+        return { nbr: obj1 + obj2 };
     }
 
     // Si objets, on fusionne
