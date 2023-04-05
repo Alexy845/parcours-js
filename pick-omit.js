@@ -17,7 +17,7 @@ function omit(obj, keys) {
         keys = [keys];
     }
 
-    const result = {};
+    const result = Object.create(null);
     for (const key in obj) {
         if (!keys.includes(key)) {
             result[key] = obj[key];
