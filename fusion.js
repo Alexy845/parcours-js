@@ -1,5 +1,5 @@
 function fusion(obj1, obj2) {
-    for (let key in obj1) {
+    for (const key in obj1) {
         // objets vide on renvoie l'autre objet
         if (!obj1) return obj2;
         if (!obj2) return obj1;
