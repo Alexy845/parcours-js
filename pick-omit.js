@@ -1,4 +1,4 @@
-function pickKeys(obj, keys) {
+function pick(obj, keys) {
     if (typeof keys === 'string') {
       keys = [keys];
     }
