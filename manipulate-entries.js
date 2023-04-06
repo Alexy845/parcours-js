@@ -39,9 +39,15 @@ function lowCarbs(entries) {
 }
 
 function cartTotal(entries) {
-    return reduceEntries(entries, (acc, curr) => {
-        let value = (nutritionDB[curr[0]]["price"] / 100) * curr[1];
-        return acc + value;
-    }, 0);
+    let res = {};
+    for (let key in entries) {
+        res[key] = {};
+        for (let dbKey in nutritionDB[key]) {
+            res[key][dbKey] =
+                Math.round(
+                    (entries[key] / 100) * nutritionDB[key][dbKey] * 1000
+                ) / 1000;
+        }
+    }
+    return res;
 }
-
