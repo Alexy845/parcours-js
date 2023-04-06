@@ -1,25 +1,17 @@
-function pronoun(str) {
-    const words = str.split(/\s+/); // regex pattern to split words by space or new lines
-    const pronouns = {
-        i: { word: [], count: 0 },
-        you: { word: [], count: 0 },
-        he: { word: [], count: 0 },
-        she: { word: [], count: 0 },
-        it: { word: [], count: 0 },
-        they: { word: [], count: 0 },
-        we: { word: [], count: 0 },
-    };
-    let prevPronoun = null;
-    for (let word of words) {
-        const normalizedWord = word.replace(/[\,\.\?\!]/g, '').toLowerCase();
-        if (pronouns.hasOwnProperty(normalizedWord)) {
-            prevPronoun = normalizedWord;
-            pronouns[normalizedWord].count++;
-        } else if (prevPronoun !== null) {
-            pronouns[prevPronoun].word.push(word);
+function pronoun(text) {
+    const pronouns = ['i', 'you', 'he', 'she', 'it', 'they', 'we'];
+    const words = text.toLowerCase().replace(/[\n,]/g, ' ').split(' ');
+    const counts = pronouns.reduce((acc, pronoun) => ({ ...acc, [pronoun]: { count: 0, word: [] } }), {});
+    
+    for (let i = 0; i < words.length; i++) {
+      const word = words[i];
+      if (pronouns.includes(word)) {
+        counts[word].count++;
+        if (!counts[word].word.includes(words[i + 1])) {
+          counts[word].word.push(words[i + 1]);
         }
+      }
     }
-    return Object.fromEntries(
-        Object.entries(pronouns).filter(([_, v]) => v.count > 0)
-    );
-}
+    return counts;
+  }
+  
