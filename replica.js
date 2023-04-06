@@ -20,7 +20,11 @@ function replica(target, ...sources) {
                         target[key] = Array.isArray(sourceValue) ? [] : {};
                     }
 
-                    replica(target[key], sourceValue);
+                    if (Array.isArray(sourceValue)) {
+                        target[key] = replica([], sourceValue);
+                    } else {
+                        replica(target[key], sourceValue);
+                    }
                 } else {
                     target[key] = sourceValue;
                 }
