@@ -8,7 +8,7 @@ function pronoun(str) {
         they: { word: [], count: 0 },
         we: { word: [], count: 0 },
     };
-    const words = str.split(' ');
+    const words = str.split(/\s+/);
     for (let i = 0; i < words.length - 1; i++) {
         const word = words[i];
         if (word.toLowerCase() in pronouns) {
