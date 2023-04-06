@@ -1,24 +1,17 @@
-function pronoun(str) {
+function pronoun(text) {
     const pronouns = ['i', 'you', 'he', 'she', 'it', 'they', 'we'];
-    const words = str.split(/\s+/);
-    const result = {};
-    let currentPronoun;
-
-    words.forEach((word, index) => {
-        if (pronouns.includes(word.toLowerCase())) {
-            currentPronoun = word.toLowerCase();
-            if (!result[currentPronoun]) {
-                result[currentPronoun] = { word: [], count: 0 };
-            }
-        } else if (currentPronoun) {
-            result[currentPronoun].count++;
-            if (word[word.length - 1] === ',') {
-                word = word.slice(0, word.length - 1);
-            }
-            result[currentPronoun].word.push(word);
-            currentPronoun = undefined;
+    const words = text.toLowerCase().replace(/[\n,]/g, ' ').split(' ');
+    const counts = pronouns.reduce((acc, pronoun) => ({ ...acc, [pronoun]: { count: 0, word: [] } }), {});
+    
+    for (let i = 0; i < words.length; i++) {
+      const word = words[i];
+      if (pronouns.includes(word)) {
+        counts[word].count++;
+        if (!counts[word].word.includes(words[i + 1])) {
+          counts[word].word.push(words[i + 1]);
         }
-    });
-
-    return result;
-}
+      }
+    }
+    return counts;
+  }
+  
