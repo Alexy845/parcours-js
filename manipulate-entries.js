@@ -29,8 +29,10 @@ function totalCalories(obj) {
     return reduceEntries(obj, (acc, [key, value]) => acc + value, 0);
 }
 
-function lowCarbs(obj) {
-    return filterEntries(obj, ([key, value]) => value < 10);
+function lowCarbs(entries) {
+    return filterEntries(entries, (entry) => {
+        let value = (nutritionDB[entry[0]]["carbs"] / 100) * entry[1];
+        return parseInt(value) <= 50;});
 }
 
 function cartTotal(obj) {
