@@ -14,7 +14,9 @@ function replica(target, ...sources) {
                 const targetValue = target[key];
 
                 if (typeof sourceValue === 'object' && sourceValue !== null) {
-                    if (typeof targetValue !== 'object' || targetValue === null) {
+                    if (sourceValue instanceof RegExp) {
+                        target[key] = new RegExp(sourceValue);
+                    } else if (typeof targetValue !== 'object' || targetValue === null) {
                         target[key] = Array.isArray(sourceValue) ? [] : {};
                     }
 
