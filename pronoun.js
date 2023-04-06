@@ -1,26 +1,24 @@
 function pronoun(str) {
-    const pronouns = {
-        i: { word: [], count: 0 },
-        you: { word: [], count: 0 },
-        he: { word: [], count: 0 },
-        she: { word: [], count: 0 },
-        it: { word: [], count: 0 },
-        they: { word: [], count: 0 },
-        we: { word: [], count: 0 },
-    };
+    const pronouns = ['i', 'you', 'he', 'she', 'it', 'they', 'we'];
     const words = str.split(/\s+/);
-    for (let i = 0; i < words.length - 1; i++) {
-        const word = words[i];
-        if (word.toLowerCase() in pronouns) {
-            const pronoun = pronouns[word.toLowerCase()];
-            const nextWord = words[i + 1];
-            if (nextWord) {
-                pronoun.word.push(nextWord);
+    const result = {};
+    let currentPronoun;
+
+    words.forEach((word, index) => {
+        if (pronouns.includes(word.toLowerCase())) {
+            currentPronoun = word.toLowerCase();
+            if (!result[currentPronoun]) {
+                result[currentPronoun] = { word: [], count: 0 };
             }
-            pronoun.count++;
+        } else if (currentPronoun) {
+            result[currentPronoun].count++;
+            if (word[word.length - 1] === ',') {
+                word = word.slice(0, word.length - 1);
+            }
+            result[currentPronoun].word.push(word);
+            currentPronoun = undefined;
         }
-    }
-    return Object.fromEntries(
-        Object.entries(pronouns).filter(([_, { count }]) => count > 0)
-    );
+    });
+
+    return result;
 }
