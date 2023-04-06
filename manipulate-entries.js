@@ -25,8 +25,11 @@ function reduceEntries(obj, reducer, initialValue) {
     return res;
 }
 
-function totalCalories(obj) {
-    return reduceEntries(obj, (acc, [key, value]) => acc + value, 0);
+function totalCalories(entries) {
+    return reduceEntries(entries, (acc, [key, value]) => {
+        let value2 = (nutritionDB[key]["calories"] / 100) * value;
+        return acc + parseInt(value2);
+    }, 0);
 }
 
 function lowCarbs(entries) {
