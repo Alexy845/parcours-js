@@ -1,26 +1,29 @@
-function filterEnties(obj, filter){
-    const result = {};
-    for (const key in obj) {
-        if (filter(key, obj[key])) {
-            result[key] = obj[key];
+function filterEntries(obj, filter) {
+    let res = {};
+    for (let key in obj) {
+        if (filter([key, obj[key]])) {
+            res[key] = obj[key];
         }
     }
-    return result;
+    return res;
 }
 
-function mapEntries(obj, map){
-    const result = {};
-    for (const key in obj) {
-        result[key] = map(key, obj[key]);
+function mapEntries(obj, map) {
+    let res = {};
+    for (let key in obj) {
+        let [newKey, newValue] = map([key, obj[key]]);
+        res[newKey] = newValue;
     }
-    return result;
+    return res;
 }
 
-function reduceEntries(obj, reduce, acc){
-    let result = acc;
-    for (const key in obj) {
-        result = reduce(result, key, obj[key]);
+function reduceEntries(obj, reducer, initialValue) {
+    let res = initialValue;
+    for (let key in obj) {
+        res = reducer(res, [key, obj[key]]);
     }
-    return result;
+    return res;
 }
+
+
 
