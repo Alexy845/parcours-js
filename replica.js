@@ -22,6 +22,8 @@ function replica(target, ...sources) {
 
                     if (Array.isArray(sourceValue)) {
                         target[key] = replica([], sourceValue);
+                    } else if (Array.isArray(targetValue)) {
+                        target[key] = replica({}, sourceValue);
                     } else {
                         replica(target[key], sourceValue);
                     }
