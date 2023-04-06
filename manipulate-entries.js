@@ -25,5 +25,15 @@ function reduceEntries(obj, reducer, initialValue) {
     return res;
 }
 
+function totalCalories(obj) {
+    return reduceEntries(obj, (acc, [key, value]) => acc + value, 0);
+}
 
+function lowCarbs(obj) {
+    return filterEntries(obj, ([key, value]) => value < 10);
+}
+
+function cartTotal(obj) {
+    return reduceEntries(obj, (acc, [key, value]) => acc + value.price * value.quantity, 0);
+}
 
