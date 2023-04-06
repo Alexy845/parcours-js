@@ -10,14 +10,16 @@ function pronoun(str) {
             if (!result[currentPronoun]) {
                 result[currentPronoun] = { word: [], count: 0 };
             }
-        } else if (currentPronoun) {
-            result[currentPronoun].count++;
+        } else if (currentPronoun !== undefined) {
             if (word[word.length - 1] === ',') {
                 word = word.slice(0, word.length - 1);
             }
             result[currentPronoun].word.push(word);
-            currentPronoun = undefined;
         }
+    });
+
+    Object.keys(result).forEach((key) => {
+        result[key].count = result[key].word.length;
     });
 
     return result;
